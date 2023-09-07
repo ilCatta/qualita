@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qualita/pages/informazioni_lotto/info_lotto_adiuto.dart';
 import 'package:qualita/pages/informazioni_lotto/info_lotto_dati.dart';
-import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_1.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_2.dart';
 
 class InformazioniLottoPage extends StatefulWidget {
   const InformazioniLottoPage({super.key});
@@ -91,7 +92,8 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
                   controller: _pageController,
                   children: [
                     InfoLottoDati(),
-                    InfoLottoDifetti(),
+                    InfoLottoDifetti1(),
+                    InfoLottoDifetti2(),
                     InfoLottoAdiuto(),
                   ],
                 ),
@@ -144,6 +146,7 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
         children: {
           1: AutoSizeText(
             'Dati'.toUpperCase(),
+            textAlign: TextAlign.center,
             style: TextStyle(
               letterSpacing: 1.3,
               fontSize: 14,
@@ -152,7 +155,8 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
             ),
           ),
           2: AutoSizeText(
-            'Difetti'.toUpperCase(),
+            'Difetti 1'.toUpperCase(),
+            textAlign: TextAlign.center,
             style: TextStyle(
               letterSpacing: 1.3,
               fontSize: 14,
@@ -161,12 +165,23 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
             ),
           ),
           3: AutoSizeText(
-            'Adiuto'.toUpperCase(),
+            'Difetti 2'.toUpperCase(),
+            textAlign: TextAlign.center,
             style: TextStyle(
               letterSpacing: 1.3,
               fontSize: 14,
               fontWeight: menuActiveIndex.compareTo(3) == 0 ? FontWeight.w700 : FontWeight.w600,
               color: menuActiveIndex.compareTo(3) == 0 ? textSelected : textUnselected,
+            ),
+          ),
+          4: AutoSizeText(
+            'Adiuto'.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              letterSpacing: 1.3,
+              fontSize: 14,
+              fontWeight: menuActiveIndex.compareTo(4) == 0 ? FontWeight.w700 : FontWeight.w600,
+              color: menuActiveIndex.compareTo(4) == 0 ? textSelected : textUnselected,
             ),
           ),
         },

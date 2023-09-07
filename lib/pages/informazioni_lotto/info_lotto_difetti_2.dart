@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class InfoLottoDifetti extends StatelessWidget {
-  const InfoLottoDifetti({super.key});
+class InfoLottoDifetti2 extends StatelessWidget {
+  const InfoLottoDifetti2({super.key});
 
   @override
   Widget build(BuildContext context) {

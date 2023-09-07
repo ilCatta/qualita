@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class InfoLottoDati extends StatefulWidget {
-  const InfoLottoDati({super.key});
+class InfoLottoDifetti1 extends StatefulWidget {
+  const InfoLottoDifetti1({super.key});
 
   @override
-  State<InfoLottoDati> createState() => _InfoLottoDatiState();
+  State<InfoLottoDifetti1> createState() => _InfoLottoDifetti1State();
 }
 
-class _InfoLottoDatiState extends State<InfoLottoDati> {
+class _InfoLottoDifetti1State extends State<InfoLottoDifetti1> {
   final _scrollController = ScrollController();
   ScrollPhysics _physics = ClampingScrollPhysics();
 
@@ -44,7 +44,7 @@ class _InfoLottoDatiState extends State<InfoLottoDati> {
               padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: Center(
                 child: Text(
-                  "Dati Entrata",
+                  "Difetti 1",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -56,18 +56,10 @@ class _InfoLottoDatiState extends State<InfoLottoDati> {
             SizedBox(height: 8),
             Divider(height: 2, color: Colors.black12),
             SizedBox(height: 8),
-            _campo(label: "Num. Doc. Gamma", value: "1310"),
+            _campo(label: "Id Documento", value: "12974"),
             _campo(label: "Codice Lotto", value: "220000482000294"),
-            _campo(label: "Data Registrazione", value: "13/05/2022"),
-            _campo(label: "Data Documento", value: "11/05/2022"),
-            _campo(label: "Fornitore", value: "482 | ROCCA di CAPRILEONE IMPRESA AGRICOLA COOP. PER AZIONI"),
-            _campo(label: "Articolo", value: "ARANCE VALENCIA IT Cal. 4 Cat. II BIO"),
-            _campo(label: "Imballo", value: "E04 | Cartone | 0,65kg"),
-            _campo(label: "Note", value: "Marcio Macchiato 20/30%"),
-            _campo(label: "Num. Doc. Forn.", value: "220"),
-            _campo(label: "Prog. Riga", value: "1"),
-            _campo(label: "Colli Riga", value: "55"),
-            _campo(label: "Media Collo", value: "16"),
+            _campo(label: "Data Registrazione", value: "06/09/2023"),
+            _campo(label: "Data Documento", value: "06/09/2023"),
             SizedBox(height: 16),
           ],
         ),
