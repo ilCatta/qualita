@@ -16,9 +16,6 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  //final savedThemeMode = await AdaptiveTheme.getThemeMode();
-  //final savedThemeMode = AdaptiveThemeMode.light;
-
   runApp(
     App(savedThemeMode: AdaptiveThemeMode.light),
   );

@@ -11,14 +11,6 @@ class LoginPage extends StatelessWidget {
         child: TextButton(
           onPressed: () {
             context.go("/seleziona-lotto");
-            /* String barcodeValue = "d";
-            context.goNamed(
-              '/seleziona-lotto',
-              pathParameters: {
-                'barcodeValue': barcodeValue,
-              },
-            );
-            */
           },
           child: Text("TextButton"),
         ),

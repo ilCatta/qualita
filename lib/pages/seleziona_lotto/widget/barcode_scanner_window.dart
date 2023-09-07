@@ -1,8 +1,10 @@
 import 'dart:io';
 
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:qualita/components/logo_widget.dart';
 import 'package:qualita/error/barcode/scanner_error_widget.dart';
 
 class BarcodeScannerWithScanWindow extends StatefulWidget {
@@ -41,7 +43,28 @@ class _BarcodeScannerWithScanWindowState extends State<BarcodeScannerWithScanWin
       height: 200,
     );
     return Scaffold(
-      appBar: AppBar(title: const Text('Join Service')),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(45.0),
+        child: AppBar(
+          centerTitle: true,
+          title: Stack(
+            children: [
+              GestureDetector(
+                onTap: () => context.go("/seleziona-lotto"),
+                child: SizedBox(
+                    height: 35,
+                    child: Icon(
+                      EvaIcons.arrowBackOutline,
+                      size: 27,
+                      color: Colors.black87,
+                    )),
+              ),
+              LogoWidget(imageSize: 35, textSize: 20),
+            ],
+          ),
+          shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
+        ),
+      ),
       backgroundColor: Colors.black,
       body: Builder(
         builder: (context) {

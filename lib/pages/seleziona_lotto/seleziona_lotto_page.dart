@@ -1,6 +1,9 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:qualita/components/logo_widget.dart';
 
 class SelezionaLottoPage extends StatefulWidget {
   String? barcodeValue;
@@ -16,13 +19,6 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
   @override
   void initState() {
     barcodeController.text = widget.barcodeValue ?? "";
-
-    /* if (widget.barcodeValue == null) {
-      barcodeController.text = "";
-    }
-    if (widget.barcodeValue != null) {
-      barcodeController.text = widget.barcodeValue ?? "";
-    }*/
     super.initState();
   }
 
@@ -35,7 +31,7 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
           preferredSize: Size.fromHeight(45.0),
           child: AppBar(
             centerTitle: true,
-            title: _logoWidget(),
+            title: LogoWidget(imageSize: 35, textSize: 20),
             shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
           ),
         ),
@@ -43,27 +39,6 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
       ),
     );
   }
-
-  Widget _logoWidget() => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            "assets/images/JoinLogo.png",
-            height: 35,
-            width: 35,
-          ),
-          SizedBox(width: 16),
-          Center(
-            child: Text(
-              "Join Service",
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-              ),
-            ),
-          ),
-        ],
-      );
 
   Widget body() => SizedBox(
         height: MediaQuery.of(context).size.height,
@@ -106,23 +81,27 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 24),
+            padding: EdgeInsets.symmetric(vertical: 1, horizontal: 24),
             child: TextField(
               controller: barcodeController,
               keyboardType: TextInputType.text,
               textCapitalization: TextCapitalization.words,
               style: TextStyle(
                 fontSize: 16,
+                fontWeight: FontWeight.w600,
               ),
               decoration: InputDecoration(
                   border: InputBorder.none,
                   labelText: 'Codice Lotto',
                   labelStyle: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black54,
                   ),
                   floatingLabelStyle: TextStyle(
                     color: Color(0xFFE9531F),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
                   ),
                   hintText: "...",
                   hintStyle: TextStyle(
@@ -134,7 +113,7 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
                     },
                     child: Icon(
                       Ionicons.camera,
-                      size: 20,
+                      size: 22,
                       color: Colors.black87,
                     ),
                   )),
@@ -157,7 +136,9 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
               "Conferma",
               style: TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.w500,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 1,
               ),
             ),
           ),
