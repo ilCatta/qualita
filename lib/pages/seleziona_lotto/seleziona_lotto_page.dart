@@ -71,7 +71,7 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
       );
 
   Widget _labelLotto() => Padding(
-        padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+        padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
         child: Card(
           elevation: 0,
           surfaceTintColor: Color(0xffffffff),
@@ -126,7 +126,7 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
       );
 
   Widget _buttonConferma() => Padding(
-        padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+        padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
         child: GestureDetector(
           onTap: () => context.push("/informazioni-lotto"),
           child: Container(

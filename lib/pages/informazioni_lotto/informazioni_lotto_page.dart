@@ -3,6 +3,9 @@ import 'package:custom_sliding_segmented_control/custom_sliding_segmented_contro
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_adiuto.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_dati.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti.dart';
 
 class InformazioniLottoPage extends StatefulWidget {
   const InformazioniLottoPage({super.key});
@@ -13,11 +16,25 @@ class InformazioniLottoPage extends StatefulWidget {
 
 class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
   int menuActiveIndex = 1;
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
 
   void changeMenuActive(int index) {
+    _pageController.animateToPage(index - 1, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
     setState(() {
       menuActiveIndex = index;
     });
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -65,9 +82,22 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: SafeArea(
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: _menuNav(),
+          child: Column(
+            children: [
+              _menuNav(),
+              Expanded(
+                child: PageView(
+                  physics: NeverScrollableScrollPhysics(),
+                  controller: _pageController,
+                  children: [
+                    InfoLottoDati(),
+                    InfoLottoDifetti(),
+                    InfoLottoAdiuto(),
+                  ],
+                ),
+              ),
+              //  _pageViewWidget(),
+            ],
           ),
         ),
       );
@@ -145,76 +175,6 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
         },
         duration: Duration(milliseconds: 300),
         curve: Curves.linearToEaseOut,
-      ),
-    );
-  }
-
-  Widget _paginaUno() => Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-            child: Text(
-              "Dati Entrata",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          _campo(label: "Num. Doc. Gamma", value: "1310"),
-          _campo(label: "Codice Lotto", value: "220000482000294"),
-          _campo(label: "Data Registrazione", value: "13/05/2022"),
-          _campo(label: "Data Documento", value: "11/05/2022"),
-          _campo(label: "Fornitore", value: "482 | ROCCA di CAPRILEONE IMPRESA AGRICOLA COOP. PER AZIONI"),
-          _campo(label: "Articolo", value: "ARANCE VALENCIA IT Cal. 4 Cat. II BIO"),
-          _campo(label: "Imballo", value: "E04 | Cartone | 0,65kg"),
-          _campo(label: "Note", value: "Marcio Macchiato 20/30%"),
-          _campo(label: "Num. Doc. Forn.", value: "220"),
-          _campo(label: "Prog. Riga", value: "1"),
-          _campo(label: "Colli Riga", value: "55"),
-          _campo(label: "Media Collo", value: "16"),
-        ],
-      );
-
-  Widget _campo({required String label, required String value}) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
-      child: Container(
-        padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
-        constraints: BoxConstraints(minHeight: 55, minWidth: double.infinity),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          border: Border.all(
-            color: Colors.grey.shade600,
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label.toUpperCase(),
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Colors.grey.shade800,
-              ),
-            ),
-            SizedBox(height: 2),
-            Text(
-              value,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
