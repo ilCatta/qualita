@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:qualita/pages/informazioni_lotto/informazioni_lotto_page.dart';
 import 'package:qualita/pages/login/login_page.dart';
 import 'package:qualita/pages/seleziona_lotto/seleziona_lotto_page.dart';
 import 'package:qualita/pages/seleziona_lotto/widget/barcode_scanner_window.dart';
@@ -24,6 +25,10 @@ final router = GoRouter(
       path: '/barcode-scanner',
       name: '/barcode-scanner',
       builder: (context, state) => BarcodeScannerWithScanWindow(),
+    ),
+    GoRoute(
+      path: '/informazioni-lotto',
+      builder: (context, state) => InformazioniLottoPage(),
     ),
   ],
 );

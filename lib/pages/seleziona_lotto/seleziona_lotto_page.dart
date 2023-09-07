@@ -31,7 +31,10 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
           preferredSize: Size.fromHeight(45.0),
           child: AppBar(
             centerTitle: true,
-            title: LogoWidget(imageSize: 35, textSize: 20),
+            title: LogoWidget(
+              imageSize: 35,
+              textSize: 20,
+            ),
             shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
           ),
         ),
@@ -124,21 +127,24 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
 
   Widget _buttonConferma() => Padding(
         padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-        child: Container(
-          width: double.infinity,
-          height: 40,
-          decoration: BoxDecoration(
-            color: Color(0xFFE9531F),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Center(
-            child: Text(
-              "Conferma",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1,
+        child: GestureDetector(
+          onTap: () => context.push("/informazioni-lotto"),
+          child: Container(
+            width: double.infinity,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Color(0xFFE9531F),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Center(
+              child: Text(
+                "Conferma",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                ),
               ),
             ),
           ),
