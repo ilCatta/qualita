@@ -10,9 +10,9 @@ class CampoInfoLottoLocked extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
       child: Container(
-        padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
+        padding: EdgeInsets.fromLTRB(12, 4, 12, 4),
         constraints: BoxConstraints(minHeight: 55, minWidth: double.infinity),
         width: double.infinity,
         decoration: BoxDecoration(

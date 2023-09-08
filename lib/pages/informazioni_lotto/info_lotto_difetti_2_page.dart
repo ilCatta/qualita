@@ -36,97 +36,69 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
         ));
   }
 
-  Widget listaBody() => Column(
+  Widget listaBody() => Padding(
+        padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+        child: Column(
+          children: [
+            CampoInfoLottoLocked(label: "Id Documento", value: "12951"),
+            CampoInfoLottoLocked(label: "Codice Lotto", value: "220000482000294"),
+            CampoInfoLottoLocked(label: "Data Registrazione", value: "13/07/2023"),
+            CampoInfoLottoLocked(label: "Data Documento", value: "13/07/2023"),
+            SizedBox(height: 16),
+            Divider(
+              height: 2,
+              color: Colors.black12,
+              indent: 0,
+              endIndent: 0,
+            ),
+            SizedBox(height: 16),
+            _intestazioneTabella(),
+            SizedBox(height: 16),
+            _rowDifetto(pr: 1, descrizione: "Calibro Piccolo", value: 30),
+            SizedBox(height: 8),
+            _rowDifetto(pr: 2, descrizione: "Calibro Medio", value: 27),
+            SizedBox(height: 8),
+            _rowDifetto(pr: 3, descrizione: "Calibro Grande", value: 41),
+            SizedBox(height: 8),
+            _rowDifettoTotale(value: 100),
+          ],
+        ),
+      );
+
+  Widget _intestazioneTabella() => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CampoInfoLottoLocked(label: "Id Documento", value: "12951"),
-          CampoInfoLottoLocked(label: "Codice Lotto", value: "220000482000294"),
-          CampoInfoLottoLocked(label: "Data Registrazione", value: "13/07/2023"),
-          CampoInfoLottoLocked(label: "Data Documento", value: "13/07/2023"),
-          SizedBox(height: 16),
-          Divider(
-            height: 2,
-            color: Colors.black12,
-            indent: 16,
-            endIndent: 16,
-          ),
-          SizedBox(height: 16),
-          /*
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-            child: AutoSizeText(
-              "Descrizione e percentuale del difetto".toUpperCase(),
-              minFontSize: 8,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-              ),
-            ),
-          ),*/
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Descrizione",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Text(
-                  "Percentuale",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ],
+          Text(
+            "Descrizione",
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: 16),
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                difettoDescrizione(),
-                campoDaCompilare(),
-              ],
-            ),
-          ),
-          SizedBox(height: 8),
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                difettoDescrizione(),
-                campoDaCompilare(),
-              ],
-            ),
-          ),
-          SizedBox(height: 8),
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                difettoDescrizione(),
-                campoDaCompilare(),
-              ],
+          Text(
+            "Percentuale",
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ],
       );
 
-  Widget difettoDescrizione() => Column(
+  Widget _rowDifetto({required int pr, required String descrizione, required double value}) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _difettoDescrizione(pr: pr, descrizione: descrizione),
+          _difettoValore(value: value),
+        ],
+      );
+
+  Widget _difettoDescrizione({required int pr, required String descrizione}) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Pr. 1",
+            "Pr. $pr",
             style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w600,
@@ -135,7 +107,7 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
           ),
           SizedBox(height: 4),
           Text(
-            "Calibro Piccolo",
+            descrizione,
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w600,
@@ -144,7 +116,7 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
         ],
       );
 
-  Widget campoDaCompilare() => Card(
+  Widget _difettoValore({required double value}) => Card(
         elevation: 0,
         surfaceTintColor: Color(0xffffffff),
         color: Color(0xffffffff),
@@ -160,7 +132,8 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
           height: 40,
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 5, horizontal: 12),
-            child: TextField(
+            child: TextFormField(
+              initialValue: value.toStringAsFixed(0),
               keyboardType: TextInputType.number,
               style: TextStyle(
                 fontSize: 16,
@@ -172,5 +145,48 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
             ),
           ),
         ),
+      );
+
+  Widget _rowDifettoTotale({required double value}) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Totale",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Card(
+            elevation: 0,
+            surfaceTintColor: Color(0xffffffff),
+            color: Color(0xffffffff),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: BorderSide(
+                color: Colors.black12,
+                width: 1.3,
+              ),
+            ),
+            child: Container(
+              padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+              width: 85,
+              height: 40,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    value.toStringAsFixed(0),
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       );
 }

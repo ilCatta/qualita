@@ -11,7 +11,7 @@ class CampoInfoLottoDifetti1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
       child: Container(
         padding: EdgeInsets.fromLTRB(12, 12, 12, 12),
         constraints: BoxConstraints(minHeight: 40, minWidth: double.infinity),
