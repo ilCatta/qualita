@@ -4,16 +4,17 @@ import 'package:flutter/material.dart';
 
 class CardInfoLotto extends StatelessWidget {
   String title;
-  Widget body;
-  CardInfoLotto({required this.title, required this.body});
+  Widget cardBody;
+  CardInfoLotto({required this.title, required this.cardBody});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
+      margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
+      padding: EdgeInsets.fromLTRB(0, 0, 0, 16),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white, //Color(0xFFEFF4F8),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           width: 2,
@@ -37,28 +38,29 @@ class CardInfoLotto extends StatelessWidget {
               color: Color(0xFFFDEEE9),
               borderRadius: BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
             ),
-            child: Column(
-              children: [
-                SizedBox(height: 8),
-                Center(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.4,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8),
-              ],
-            ),
+            child: cardTitle(),
           ),
           Divider(height: 1, color: Color(0xFFE9531F), thickness: 2),
-          SizedBox(height: 8),
-          body,
+          cardBody,
         ],
       ),
     );
   }
+
+  Widget cardTitle() => Column(
+        children: [
+          SizedBox(height: 8),
+          Center(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 0.4,
+              ),
+            ),
+          ),
+          SizedBox(height: 8),
+        ],
+      );
 }
