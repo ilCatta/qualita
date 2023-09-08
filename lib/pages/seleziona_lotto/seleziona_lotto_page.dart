@@ -143,7 +143,7 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
-                  letterSpacing: 1,
+                  letterSpacing: 1.3,
                 ),
               ),
             ),

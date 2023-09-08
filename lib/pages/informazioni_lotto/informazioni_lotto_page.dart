@@ -115,7 +115,7 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          width: 1.5,
+          width: 2,
           color: Color(0xFFE9531F),
         ),
       ),
@@ -146,6 +146,7 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
         children: {
           1: AutoSizeText(
             'Dati'.toUpperCase(),
+            minFontSize: 8,
             textAlign: TextAlign.center,
             style: TextStyle(
               letterSpacing: 1.3,
@@ -156,6 +157,7 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
           ),
           2: AutoSizeText(
             'Difetti 1'.toUpperCase(),
+            minFontSize: 8,
             textAlign: TextAlign.center,
             style: TextStyle(
               letterSpacing: 1.3,
@@ -166,6 +168,7 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
           ),
           3: AutoSizeText(
             'Difetti 2'.toUpperCase(),
+            minFontSize: 8,
             textAlign: TextAlign.center,
             style: TextStyle(
               letterSpacing: 1.3,
@@ -176,6 +179,7 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
           ),
           4: AutoSizeText(
             'Adiuto'.toUpperCase(),
+            minFontSize: 8,
             textAlign: TextAlign.center,
             style: TextStyle(
               letterSpacing: 1.3,
