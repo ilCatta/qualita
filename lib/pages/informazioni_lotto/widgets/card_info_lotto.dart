@@ -52,7 +52,7 @@ class CardInfoLotto extends StatelessWidget {
           SizedBox(height: 8),
           Center(
             child: Text(
-              title,
+              title.toUpperCase(),
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,

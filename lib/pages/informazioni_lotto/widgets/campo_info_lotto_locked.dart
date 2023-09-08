@@ -38,7 +38,7 @@ class CampoInfoLottoLocked extends StatelessWidget {
             Text(
               value,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: FontWeight.w600,
               ),
             ),

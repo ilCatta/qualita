@@ -1,5 +1,4 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:qualita/pages/informazioni_lotto/widgets/campo_info_lotto_difetti_1.dart';
 import 'package:qualita/pages/informazioni_lotto/widgets/campo_info_lotto_locked.dart';
@@ -56,7 +55,7 @@ class _InfoLottoDifetti1State extends State<InfoLottoDifetti1> {
           Padding(
             padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
             child: AutoSizeText(
-              "Descrizione e percentuale del difetto",
+              "Descrizione e percentuale del difetto".toUpperCase(),
               minFontSize: 8,
               textAlign: TextAlign.center,
               style: TextStyle(

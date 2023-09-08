@@ -155,7 +155,7 @@ class _CampoDifetti1State extends State<CampoDifetti1> {
           width: 85,
           padding: EdgeInsets.only(left: 8, right: 8),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(10),
             border: Border.all(
               color: Colors.black26,
             ),
