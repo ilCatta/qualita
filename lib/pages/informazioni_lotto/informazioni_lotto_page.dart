@@ -40,42 +40,45 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(45.0),
-        child: AppBar(
-          automaticallyImplyLeading: false,
-          centerTitle: true,
-          title: Stack(
-            children: [
-              GestureDetector(
-                onTap: () => context.pop(),
-                child: SizedBox(
-                    height: 35,
-                    child: Icon(
-                      EvaIcons.arrowBackOutline,
-                      size: 27,
-                      color: Colors.black87,
-                    )),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Qualità",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(45.0),
+          child: AppBar(
+            automaticallyImplyLeading: false,
+            centerTitle: true,
+            title: Stack(
+              children: [
+                GestureDetector(
+                  onTap: () => context.pop(),
+                  child: SizedBox(
+                      height: 35,
+                      child: Icon(
+                        EvaIcons.arrowBackOutline,
+                        size: 27,
+                        color: Colors.black87,
+                      )),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Qualità",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
+            shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
           ),
-          shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
         ),
+        body: _body(),
       ),
-      body: _body(),
     );
   }
 

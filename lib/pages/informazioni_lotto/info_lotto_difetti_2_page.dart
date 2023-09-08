@@ -127,21 +127,19 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
             width: 1.3,
           ),
         ),
-        child: SizedBox(
+        child: Container(
+          padding: EdgeInsets.fromLTRB(12, 6, 12, 5),
           width: 85,
           height: 40,
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 12),
-            child: TextFormField(
-              initialValue: value.toStringAsFixed(0),
-              keyboardType: TextInputType.number,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-              ),
+          child: TextFormField(
+            initialValue: value.toStringAsFixed(0),
+            keyboardType: TextInputType.number,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
             ),
           ),
         ),
@@ -160,11 +158,13 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
           Card(
             elevation: 0,
             surfaceTintColor: Color(0xffffffff),
-            color: Color(0xffffffff),
+            //color: Color(0xffffffff),
+            color: Colors.grey.shade200,
+
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
               side: BorderSide(
-                color: Colors.black12,
+                color: Colors.grey.shade600,
                 width: 1.3,
               ),
             ),
