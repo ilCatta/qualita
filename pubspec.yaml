@@ -45,6 +45,7 @@ dependencies:
   mobile_scanner: ^3.4.1
   custom_sliding_segmented_control: ^1.7.5
   auto_size_text: ^3.0.0
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:

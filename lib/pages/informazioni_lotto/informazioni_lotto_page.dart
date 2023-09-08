@@ -3,10 +3,10 @@ import 'package:custom_sliding_segmented_control/custom_sliding_segmented_contro
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:qualita/pages/informazioni_lotto/info_lotto_adiuto.dart';
-import 'package:qualita/pages/informazioni_lotto/info_lotto_dati.dart';
-import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_1.dart';
-import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_2.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_adiuto_page.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_dati_page.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_1_page.dart';
+import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_2_page.dart';
 
 class InformazioniLottoPage extends StatefulWidget {
   const InformazioniLottoPage({super.key});
