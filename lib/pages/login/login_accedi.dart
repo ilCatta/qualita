@@ -45,8 +45,8 @@ class _LoginAccediState extends State<LoginAccedi> {
         padding: EdgeInsets.only(bottom: 20.0),
         child: Card(
           elevation: 2,
-          color: Color(0xFFFDEEE9),
-          surfaceTintColor: Color(0xFFFDEEE9),
+          color: Colors.grey.shade100,
+          surfaceTintColor: Colors.grey.shade100,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           child: Container(
             padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
@@ -80,7 +80,7 @@ class _LoginAccediState extends State<LoginAccedi> {
               hintStyle: TextStyle(fontSize: 16, color: Colors.black38),
               icon: Icon(
                 FontAwesomeIcons.envelope,
-                color: Color(0xFFF36F21),
+                color: Colors.black87,
                 size: 22,
               )),
         ),
@@ -105,7 +105,7 @@ class _LoginAccediState extends State<LoginAccedi> {
               hintStyle: TextStyle(fontSize: 16, color: Colors.black38),
               icon: Icon(
                 Ionicons.lock_closed,
-                color: Color(0xFFF36F21),
+                color: Colors.black87,
                 size: 24,
               ),
               suffixIcon: GestureDetector(

@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:qualita/pages/login/login_accedi.dart';
 import 'package:qualita/pages/login/login_registrati.dart';
 
@@ -101,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
         height: 38,
         innerPadding: EdgeInsets.all(2),
         decoration: BoxDecoration(
-          color: Color(0xFFFDEEE9),
+          color: Colors.grey.shade100,
           borderRadius: BorderRadius.circular(8),
         ),
         thumbDecoration: BoxDecoration(
