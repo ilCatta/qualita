@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:qualita/components/logo_widget.dart';
+import 'package:qualita/widgets/logo_widget.dart';
+import 'package:qualita/widgets/menu_laterale.dart';
 
 class SelezionaLottoPage extends StatefulWidget {
   String? barcodeValue;
@@ -27,6 +28,7 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
+        drawer: MenuLaterale(menuSelezionato: SezioniMenu.qualita),
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(45.0),
           child: AppBar(

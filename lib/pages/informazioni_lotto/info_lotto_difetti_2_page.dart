@@ -139,6 +139,7 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
               fontWeight: FontWeight.w600,
             ),
             decoration: InputDecoration(
+              //contentPadding: EdgeInsets.all(0),
               border: InputBorder.none,
             ),
           ),

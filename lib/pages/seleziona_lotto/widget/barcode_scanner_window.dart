@@ -4,7 +4,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:qualita/components/logo_widget.dart';
+import 'package:qualita/widgets/logo_widget.dart';
 import 'package:qualita/error/barcode/scanner_error_widget.dart';
 
 class BarcodeScannerWithScanWindow extends StatefulWidget {
