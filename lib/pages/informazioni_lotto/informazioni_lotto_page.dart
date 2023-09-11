@@ -87,18 +87,7 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
           child: Column(
             children: [
               _menuNav(),
-              Expanded(
-                child: PageView(
-                  physics: NeverScrollableScrollPhysics(),
-                  controller: _pageController,
-                  children: [
-                    InfoLottoDati(),
-                    InfoLottoDifetti1(),
-                    InfoLottoDifetti2(),
-                    InfoLottoAdiuto(),
-                  ],
-                ),
-              ),
+              _pageView(),
               //  _pageViewWidget(),
             ],
           ),
@@ -198,4 +187,17 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
       ),
     );
   }
+
+  Widget _pageView() => Expanded(
+        child: PageView(
+          physics: NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          children: [
+            InfoLottoDati(),
+            InfoLottoDifetti1(),
+            InfoLottoDifetti2(),
+            InfoLottoAdiuto(),
+          ],
+        ),
+      );
 }
