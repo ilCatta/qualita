@@ -33,16 +33,19 @@ class _LoginRegistratiState extends State<LoginRegistrati> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 24.0),
-      child: Column(
-        children: [
-          Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              _formWidget(),
-              _bottoneRegistrati(),
-            ],
-          ),
-        ],
+      child: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: Column(
+          children: [
+            Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                _formWidget(),
+                _bottoneRegistrati(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

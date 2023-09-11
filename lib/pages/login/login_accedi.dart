@@ -26,17 +26,20 @@ class _LoginAccediState extends State<LoginAccedi> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 24.0),
-      child: Column(
-        children: [
-          Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              _formWidget(),
-              _bottoneAccedi(),
-            ],
-          ),
-          _bottonePasswordDimenticata(),
-        ],
+      child: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: Column(
+          children: [
+            Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                _formWidget(),
+                _bottoneAccedi(),
+              ],
+            ),
+            _bottonePasswordDimenticata(),
+          ],
+        ),
       ),
     );
   }
