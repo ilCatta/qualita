@@ -161,7 +161,7 @@ class _MenuLateraleState extends State<MenuLaterale> {
 
   Widget _footerMenu() {
     return Padding(
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       child: Column(
         children: [
           ListTile(

@@ -43,44 +43,42 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(45.0),
-          child: AppBar(
-            automaticallyImplyLeading: false,
-            centerTitle: true,
-            title: Stack(
-              children: [
-                GestureDetector(
-                  onTap: () => context.pop(),
-                  child: SizedBox(
-                      height: 35,
-                      child: Icon(
-                        EvaIcons.arrowBackOutline,
-                        size: 27,
-                        color: Colors.black87,
-                      )),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Qualità",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
-          ),
-        ),
+        appBar: _appBar(),
         body: _body(),
       ),
     );
   }
+
+  PreferredSize _appBar() => PreferredSize(
+        preferredSize: Size.fromHeight(45.0),
+        child: AppBar(
+          centerTitle: true,
+          leading: GestureDetector(
+            onTap: () => context.pop(),
+            child: SizedBox(
+              height: 35,
+              child: Icon(
+                EvaIcons.arrowBackOutline,
+                size: 27,
+                color: Colors.black87,
+              ),
+            ),
+          ),
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Qualità",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
+          shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
+        ),
+      );
 
   Widget _body() => SizedBox(
         height: MediaQuery.of(context).size.height,
