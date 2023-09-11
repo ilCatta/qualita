@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:qualita/widgets/logo_widget.dart';
 
 enum SezioniMenu {
@@ -25,13 +26,25 @@ class _MenuLateraleState extends State<MenuLaterale> {
   void navigazioneMenu(SezioniMenu nomeMenu) {
     switch (nomeMenu) {
       case SezioniMenu.home:
-        Navigator.pushReplacementNamed(context, '/HomePage');
+        context.go("/");
+        break;
+      case SezioniMenu.utenti:
+        context.go("/");
+        break;
+      case SezioniMenu.gruppi:
+        context.go("/");
+        break;
+      case SezioniMenu.lavorazioni:
+        context.go("/");
         break;
       case SezioniMenu.qualita:
         context.go("/seleziona-lotto");
         break;
+      case SezioniMenu.listini:
+        context.go("/");
+        break;
       default:
-        Navigator.pushReplacementNamed(context, '/HomePage');
+        context.go("/");
     }
   }
 
@@ -91,7 +104,8 @@ class _MenuLateraleState extends State<MenuLaterale> {
                 _customDivider(),
               ],
             ),
-          )
+          ),
+          _footerMenu(),
         ],
       )),
     );
@@ -120,6 +134,8 @@ class _MenuLateraleState extends State<MenuLaterale> {
             : null,
         child: ListTile(
           onTap: () => navigazioneMenu(nomeMenu),
+          contentPadding: EdgeInsets.fromLTRB(12, 3, 12, 3),
+          dense: true,
           splashColor: Colors.transparent,
           leading: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -142,4 +158,60 @@ class _MenuLateraleState extends State<MenuLaterale> {
           ),
         ),
       );
+
+  Widget _footerMenu() {
+    return Padding(
+      padding: EdgeInsets.only(left: 10, right: 10),
+      child: Column(
+        children: [
+          ListTile(
+            onTap: () => context.go("/"),
+            contentPadding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+            dense: true,
+            splashColor: Colors.transparent,
+            leading: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Ionicons.person_circle,
+                  color: Colors.black,
+                  size: 26,
+                ),
+              ],
+            ),
+            title: Text(
+              "info@joinservicesrl.it",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          ListTile(
+            onTap: () => context.go("/"),
+            contentPadding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+            dense: true,
+            splashColor: Colors.transparent,
+            leading: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Ionicons.log_out_outline,
+                  color: Colors.black,
+                  size: 26,
+                ),
+              ],
+            ),
+            title: Text(
+              "Logout",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

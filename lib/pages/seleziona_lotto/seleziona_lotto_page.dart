@@ -29,21 +29,28 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         drawer: MenuLaterale(menuSelezionato: SezioniMenu.qualita),
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(45.0),
-          child: AppBar(
-            centerTitle: true,
-            title: LogoWidget(
-              imageSize: 35,
-              textSize: 20,
-            ),
-            shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
-          ),
-        ),
+        appBar: _appBar(),
         body: body(),
       ),
     );
   }
+
+  PreferredSize _appBar() => PreferredSize(
+        preferredSize: Size.fromHeight(45.0),
+        child: AppBar(
+          centerTitle: true,
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              LogoWidget(
+                imageSize: 35,
+                textSize: 20,
+              ),
+            ],
+          ),
+          shape: Border(bottom: BorderSide(color: Colors.black12, width: 1)),
+        ),
+      );
 
   Widget body() => SizedBox(
         height: MediaQuery.of(context).size.height,
