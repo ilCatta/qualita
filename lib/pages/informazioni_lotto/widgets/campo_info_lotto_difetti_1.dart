@@ -20,6 +20,7 @@ class CampoInfoLottoDifetti1 extends StatelessWidget {
           color: Colors.white,
           border: Border.all(
             color: Colors.black,
+            width: 1.3,
           ),
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),

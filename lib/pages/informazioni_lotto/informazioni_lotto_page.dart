@@ -7,6 +7,7 @@ import 'package:qualita/pages/informazioni_lotto/info_lotto_adiuto_page.dart';
 import 'package:qualita/pages/informazioni_lotto/info_lotto_dati_page.dart';
 import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_1_page.dart';
 import 'package:qualita/pages/informazioni_lotto/info_lotto_difetti_2_page.dart';
+import 'package:qualita/theme/custom_color.dart';
 
 class InformazioniLottoPage extends StatefulWidget {
   const InformazioniLottoPage({super.key});
@@ -101,12 +102,11 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
     return Container(
       margin: EdgeInsets.fromLTRB(16, 12, 16, 12),
       decoration: BoxDecoration(
-        color: Color(0xffffffff),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           width: 2,
-          color: Color(0xFFE9531F),
+          color: customColor.nero,
         ),
       ),
       child: CustomSlidingSegmentedControl<int>(
@@ -114,11 +114,11 @@ class _InformazioniLottoPageState extends State<InformazioniLottoPage> {
         height: 38,
         innerPadding: EdgeInsets.all(2),
         decoration: BoxDecoration(
-          color: Color(0xFFFDEEE9),
+          color: customColor.backgground1,
           borderRadius: BorderRadius.circular(8),
         ),
         thumbDecoration: BoxDecoration(
-          color: Color(0xFFE9531F),
+          color: customColor.arancione,
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(

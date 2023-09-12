@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:qualita/theme/custom_color.dart';
 import 'package:qualita/widgets/logo_widget.dart';
 import 'package:qualita/widgets/menu_laterale.dart';
 
@@ -142,7 +143,7 @@ class _SelezionaLottoPageState extends State<SelezionaLottoPage> {
             width: double.infinity,
             height: 40,
             decoration: BoxDecoration(
-              color: Color(0xFFE9531F),
+              color: customColor.arancione,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Center(

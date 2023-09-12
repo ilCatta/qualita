@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:qualita/theme/custom_color.dart';
 
 class CampoInfoLottoLocked extends StatelessWidget {
   String label;
@@ -16,10 +17,8 @@ class CampoInfoLottoLocked extends StatelessWidget {
         constraints: BoxConstraints(minHeight: 55, minWidth: double.infinity),
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          border: Border.all(
-            color: Colors.grey.shade600,
-          ),
+          color: customColor.lockedBg,
+          border: Border.all(color: customColor.lockedBorder, width: 1.3),
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
         child: Column(
@@ -31,7 +30,7 @@ class CampoInfoLottoLocked extends StatelessWidget {
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
-                color: Colors.grey.shade800,
+                color: customColor.lockedLabel,
               ),
             ),
             SizedBox(height: 2),
@@ -40,6 +39,7 @@ class CampoInfoLottoLocked extends StatelessWidget {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w600,
+                color: customColor.lockedText,
               ),
             ),
           ],

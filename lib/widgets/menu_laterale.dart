@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:qualita/theme/custom_color.dart';
 import 'package:qualita/widgets/logo_widget.dart';
 
 enum SezioniMenu {
@@ -126,7 +127,7 @@ class _MenuLateraleState extends State<MenuLaterale> {
       Container(
         decoration: widget.menuSelezionato == nomeMenu
             ? BoxDecoration(
-                color: Color(0xFFE9531F),
+                color: customColor.arancione,
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qualita/pages/informazioni_lotto/widgets/campo_info_lotto_locked.dart';
 import 'package:qualita/pages/informazioni_lotto/widgets/card_info_lotto.dart';
+import 'package:qualita/theme/custom_color.dart';
 
 class InfoLottoDifetti2 extends StatefulWidget {
   const InfoLottoDifetti2({super.key});
@@ -159,13 +160,11 @@ class _InfoLottoDifetti2State extends State<InfoLottoDifetti2> {
           Card(
             elevation: 0,
             surfaceTintColor: Color(0xffffffff),
-            //color: Color(0xffffffff),
-            color: Colors.grey.shade200,
-
+            color: customColor.lockedBg,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
               side: BorderSide(
-                color: Colors.grey.shade600,
+                color: customColor.lockedBorder,
                 width: 1.3,
               ),
             ),

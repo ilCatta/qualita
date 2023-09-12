@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:qualita/theme/custom_color.dart';
 
 class CardInfoLotto extends StatelessWidget {
   String title;
@@ -18,7 +19,7 @@ class CardInfoLotto extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           width: 2,
-          color: Color(0xFFE9531F),
+          color: customColor.nero,
         ),
         boxShadow: [
           BoxShadow(
@@ -35,12 +36,12 @@ class CardInfoLotto extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Color(0xFFFDEEE9),
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+              color: customColor.arancione,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             ),
             child: cardTitle(),
           ),
-          Divider(height: 1, color: Color(0xFFE9531F), thickness: 2),
+          Divider(height: 1, color: customColor.nero, thickness: 2),
           cardBody,
         ],
       ),
@@ -53,11 +54,7 @@ class CardInfoLotto extends StatelessWidget {
           Center(
             child: Text(
               title.toUpperCase(),
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 0.4,
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, letterSpacing: 0.4, color: Colors.white),
             ),
           ),
           SizedBox(height: 8),

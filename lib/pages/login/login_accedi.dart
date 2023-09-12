@@ -151,6 +151,9 @@ class _LoginAccediState extends State<LoginAccedi> {
   Widget _bottonePasswordDimenticata() => Padding(
         padding: EdgeInsets.only(top: 8.0),
         child: TextButton(
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all(Colors.transparent),
+          ),
           onPressed: () {},
           child: Text(
             "Password dimenticata?",
